@@ -1,0 +1,18 @@
+dist: xenial
+language: python
+python:
+- '3.6'
+install:
+- pip install -U pip wheel twine
+script:
+- ".travis/sync.sh"
+- ".travis/build.sh"
+deploy:
+  provider: pypi
+  distributions: "sdist bdist_wheel"
+  user: huntzhan
+  password:
+    secure: pEdCd29pI0mTfidVsXZL2+FtX8FxbywTlHYTemqYfFZxYUdxGmQw0vSZ/3ZRrzhlN5a6i8r4tM/D2OysmEaNZed8MfCZsJam8nz3ynXweXjPCzNeZTJj+XRf0qnhZ07FQgU5gd0UTmeszpOKDiqpjfLeX9o2E7QFRPOCctyHhh9EcWkp6aqN3aL6X/Tp90zzBn2lLqD/ZFjOZMuJiZA2p+397m1ihG9ILppOheiglth1TmETqMLf7vbMllcSe3q/I7xXQGFAWCH2BuMLND38TIhmpMYPKADxTk3dS2EChUhmxoXYxoKoekfeSYVTcxTclDGRzY6ya91prvQGZ+1OM0LefR8omPs86hEC8++MHhcr/KOfp5qs3+PZqAZhoPD4JMs+4DU6bUSAnjh3So75Y2EBpfXC/CdN3sWSrYBaAF0YYUXIjPva5pYVUpejQ/cP9jU/ZxMloryg3lvFCvUmhxvEVF3GEF+a8mY3JYkMiP9OdVJ0vuTJSB5+EPyCpeX+Wl4JGT7LQn6Mb1D3fLcIiggUhlGuVNfQRPcidprvVATAOUOLGQ5qaBUAgw6UgJ3hUkxuLd46tR4pXq5XcM9Qp0BE3roC04b1uhLpi2jB3i+SUiblaz2IALYi+IwGuprT7dRKF2vNw2zdZDZEcEumb+OSSBEXLH9W1BcbJBozACk=
+env:
+  global:
+    secure: a5sj/wElMdNkVjHVph/oyiRANXjoQx8JU6Z0ySdlKe9BxN45fshrHov8zMms/9/m39E9DaKYP3H/eJW3qUqHtalzptWSgBV91oehu4T0d1GY5Gb1EHhaHrMGmBpOlXwmlbSbQaNQxNb/OdlqeYy0IjtyK/CZ7wrLt6uEecqXQbEXU83G6zzl5wXrXYXSMxOQrT9Pjr+XWMVuawZkZ/7jK8boHsanPmna2OWXoJPClcbtyov9LejV3XoN+3HfOSxjQPe9FhtWgTsALHcf8ljQD9Jcvi6NBkZAS+4eCA4sSgwk7tMmEHYUhBEthgruPtbQPWZf7CsP1zoacFeyW3/UAoHQG2U5akJOkdLhk/LsbTAMaqC6xlH1MWat4QG6Nbd7KnHJtdPksmlCe1GZTGdFcspcP+MFRFdrkPnuQd3dmrp1Ir13YQsbJuY5HrHszL+TIb8vArwfLD4LDPB8z08fe+5OVXisbsGil2QJ4UW5cE6r4oTM1h+p63BicHhdxhJefeNgit/HyVMWzxXnjcWpjAo/ueM1ZG54FiR25/TLBwhc+zqw0MsDgVSBHrtuhGuEh7yT6Lpy2/tQWQ1TLdWv/6Y8SVDPQ9nwTzWU0RiQCFLTx+dUwolMAWRRXJj6JtaEdoC5pGS+Ja4D6er1UI7W2YymC/6cViZ1sRxd37JVfGY=
